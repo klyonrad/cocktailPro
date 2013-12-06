@@ -2,10 +2,19 @@
 
 
 #include "RezepturProzessor.h"
+RezepturProzessor::RezepturProzessor(void)
+{
+}
+
 //
-RezepturProzessor::RezepturProzessor(std::string dosiererZutaten)
+RezepturProzessor::RezepturProzessor(std::list<std::string> dosiererZutaten)
 {
 	
+}
+
+void RezepturProzessor::setDosiererZutaten(std::list<std::string> dosiererZutaten)
+{
+
 }
 
 //
@@ -19,4 +28,6 @@ void RezepturProzessor::searchZutatID()
 {
 	
 }
+
+
 

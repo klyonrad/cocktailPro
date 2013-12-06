@@ -5,6 +5,7 @@
 
 // #include "Rezept.h"
 #include <string>
+#include <list>
 #include "Dosierer.h"
 #include "Entleerer.h"
 #include "Mischbehaelter.h"
@@ -13,35 +14,39 @@
 //
 class RezepturProzessor
 {
-	
+
 public:
+	RezepturProzessor(void);
 	//
-    void cocktailMischen(Rezept* rezept);
+	void cocktailMischen(Rezept* rezept);
 	//
-	RezepturProzessor(std::string dosiererZutaten);
-	
+	RezepturProzessor(std::list<std::string> dosiererZutaten);
+	void setDosiererZutaten(std::list<std::string> dosiererZutaten);
+
 private:
 	//
 	int aktuelleZutatID;
-	
+
 	//
 	Dosierer * myDosierer;
-	
+
 	//
 	Entleerer * myEntleerer;
-	
+
 	//
 	Mischbehaelter * myMischbehaelter;
-	
+
 	//
 	Waage * myWaage;
-	
+
 	//
 	std::string ZutatenName;
-	
+
 	//
 	void searchZutatID();
-	
+
+public:
+
 };
 
 #endif

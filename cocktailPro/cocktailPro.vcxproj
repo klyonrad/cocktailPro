@@ -104,6 +104,9 @@
   <ItemGroup>
     <Object Include="..\..\..\Mitgegeben\_Header_u_Binaries_von_Rezeptbuch_mit_Rezeptdatei_u_Doku\gebrauchlichste_Binaries\Rezeptbuch_Win7_VS12.obj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

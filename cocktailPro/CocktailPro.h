@@ -6,11 +6,13 @@
 #include "RezepturProzessor.h"
 #include "CocktailPossibilities.h"
 #include <string>
+#include <list>
 //
 class CocktailPro
 {
 	
 public:
+	CocktailPro(void);
 	//
 	void main();
 	//
@@ -26,16 +28,15 @@ public:
 	
 private:
 	//
-    std::string dosiererZutaten;
+    std::list<std::string> dosiererZutaten;
 	
 	//
 	CocktailPossibilities * myCocktailPossibilities;
 	
-	//
-    // RezepturProzessor myRezepturProzessor;
+	RezepturProzessor myRezepturProzessor;
 	
 	//
-	string rezeptNames;
+	std::string rezeptNames;
 	
 	
 };
