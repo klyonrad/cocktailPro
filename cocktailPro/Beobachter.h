@@ -1,16 +1,14 @@
-//@(#) Beobachter.h
-
 #ifndef BEOBACHTER_H_H
 #define BEOBACHTER_H_H
 
-//
+
+using namespace std;
+
 class Beobachter
 {
 	
 public:
-	//
-	void aktualisiere();
-	
+	virtual void aktualisiere();
 };
 
 #endif

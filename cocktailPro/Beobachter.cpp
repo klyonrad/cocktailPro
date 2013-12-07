@@ -1,8 +1,7 @@
-//@(#) Beobachter.cpp
-
-
 #include "Beobachter.h"
-//
+
+using namespace std;
+
 void Beobachter::aktualisiere()
 {
 	

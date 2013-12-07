@@ -1,11 +1,11 @@
-//@(#) Entleerer.h
-
 #ifndef ENTLEERER_H_H
 #define ENTLEERER_H_H
 
 #include "Beobachter.h"
 #include "Waage.h"
-//
+
+using namespace std;
+
 class Entleerer: Beobachter
 {
 	
@@ -15,7 +15,7 @@ public:
 	//
 	void entleeren();
 	//
-	Entleerer(const Waage& myWaage);
+	Entleerer(Waage* myWaage);
 	
 private:
 	//

@@ -1,8 +1,8 @@
-//@(#) Entleerer.cpp
-
-
 #include "Entleerer.h"
-//
+#include <iostream>
+
+using namespace std;
+
 void Entleerer::ventilSchliessen()
 {
 	
@@ -21,9 +21,12 @@ void Entleerer::aktualisiere()
 }
 
 //
-Entleerer::Entleerer(const Waage& myWaage)
+Entleerer::Entleerer(Waage* myW)
 {
-	
+	myWaage=myW;
+	restmenge=0;
+	ventilOffen=false;
+	cout<<"Entleerer wurde erstellt"<<endl;
 }
 
 //

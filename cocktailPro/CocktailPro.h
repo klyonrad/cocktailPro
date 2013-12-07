@@ -1,44 +1,34 @@
-//@(#) CocktailPro.h
-
 #ifndef COCKTAILPRO_H_H
 #define COCKTAILPRO_H_H
 
 #include "RezepturProzessor.h"
 #include "CocktailPossibilities.h"
 #include <string>
-#include <list>
-//
+
+using namespace std;
+
 class CocktailPro
 {
+private:
+	int anzahlRezepte;
+    string dosiererZutaten[10];
+	string rezeptNames[20];			//maximal 20 rezepte möglich...
+	CocktailPossibilities* myCocktailPossibilities;
+    RezepturProzessor* myRezepturProzessor;
+	Rezeptbuch* MyRezeptbuch;
 	
 public:
-	CocktailPro(void);
-	//
+	CocktailPro();
 	void main();
-	//
 	void printKonfig();
-	//
 	void printMenu();
-	//
 	void printMischbareRezepte();
-	//
 	void rezeptAusfuehren();
-	//
 	void zutatenEinlesen();
-	
-private:
-	//
-    std::list<std::string> dosiererZutaten;
-	
-	//
-	CocktailPossibilities * myCocktailPossibilities;
-	
-	RezepturProzessor myRezepturProzessor;
-	
-	//
-	std::string rezeptNames;
-	
-	
+
 };
 
 #endif
+
+
+

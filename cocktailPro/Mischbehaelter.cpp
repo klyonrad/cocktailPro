@@ -1,8 +1,12 @@
-//@(#) Mischbehaelter.cpp
-
-
 #include "Mischbehaelter.h"
-//
+#include <iostream>
+
+using namespace std;
+
+Mischbehaelter::Mischbehaelter()
+{
+	cout<<"Mischbehaelter wurde erstellt"<<endl;
+}
 void Mischbehaelter::mischen(int mixtime)
 {
 	

@@ -1,52 +1,35 @@
-//@(#) RezepturProzessor.h
-
 #ifndef REZEPTURPROZESSOR_H_H
 #define REZEPTURPROZESSOR_H_H
 
 // #include "Rezept.h"
 #include <string>
-#include <list>
 #include "Dosierer.h"
 #include "Entleerer.h"
 #include "Mischbehaelter.h"
 #include "Waage.h"
 #include "Rezeptbuch.h"
-//
+#include "cockProGUI.h"
+
+using namespace std;
+
 class RezepturProzessor
 {
-
-public:
-	RezepturProzessor(void);
-	//
-	void cocktailMischen(Rezept* rezept);
-	//
-	RezepturProzessor(std::list<std::string> dosiererZutaten);
-	void setDosiererZutaten(std::list<std::string> dosiererZutaten);
-
 private:
-	//
+
 	int aktuelleZutatID;
+	string ZutatenName[10];
 
-	//
-	Dosierer * myDosierer;
-
-	//
 	Entleerer * myEntleerer;
-
-	//
 	Mischbehaelter * myMischbehaelter;
-
-	//
 	Waage * myWaage;
+	Dosierer* myDosierer[10];
+	cockProGUI* mycockProGUI;
 
-	//
-	std::string ZutatenName;
-
-	//
 	void searchZutatID();
 
 public:
-
+    void cocktailMischen(Rezept* rezept);
+	RezepturProzessor(string* dosiererZutaten);	
 };
 
 #endif

@@ -1,49 +1,31 @@
-//@(#) Dosierer.h
-
 #ifndef DOSIERER_H_H
 #define DOSIERER_H_H
 
 #include "Beobachter.h"
-#include "string.h"
 #include "Waage.h"
 #include <string>
-//
+
+using namespace std;
+
 class Dosierer: Beobachter
 {
 	
 public:
-	//
 	void abfuellen(int zutatmenge);
-	//
 	void aktualisiere();
-	//
-	Dosierer(std::string zutat, const Waage& myWaage);
-	//
-	std::string getZutat();
-	//
-	void setZutat(std::string zutat);
+	Dosierer(string zutat, Waage* myWaage);
+
+	string getZutat();
+	void setZutat(string zutat);
 	
 private:
-	//
 	int abgefuelltesGewicht;
-	
-	//
 	Waage * myWaage;
-	
-	//
 	bool stueckDosierer;
-	
-	//
 	bool ventilOffen;
-	
-	//
-	std::string zutat;
-	
-	//
+	string zutat;
 	void ventilOeffnen();
-	//
 	void ventilSchliessen();
-	
 };
 
 #endif
