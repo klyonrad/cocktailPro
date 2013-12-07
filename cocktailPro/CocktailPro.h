@@ -14,7 +14,7 @@ private:
     string dosiererZutaten[10];
 	string rezeptNames[20];			//maximal 20 rezepte möglich...
 	CocktailPossibilities* myCocktailPossibilities;
-    RezepturProzessor* myRezepturProzessor;
+    RezepturProzessor myRezepturProzessor;
 	Rezeptbuch* MyRezeptbuch;
 	
 public:

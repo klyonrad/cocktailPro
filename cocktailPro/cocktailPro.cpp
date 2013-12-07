@@ -9,7 +9,8 @@ CocktailPro::CocktailPro()
 	anzahlRezepte=20;
 	cout<<"CocktailPro wird Erstellt..."<<endl;
 	this->zutatenEinlesen();
-	myRezepturProzessor= new RezepturProzessor(dosiererZutaten);
+
+	myRezepturProzessor.setDosiererZutaten(dosiererZutaten);
 	myCocktailPossibilities=new CocktailPossibilities();
 	MyRezeptbuch=myCocktailPossibilities->mischbareRezepteBerechnen(dosiererZutaten);
 	for (int i=0;i<anzahlRezepte;i++)

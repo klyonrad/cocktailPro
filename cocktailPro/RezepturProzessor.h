@@ -30,6 +30,8 @@ private:
 public:
     void cocktailMischen(Rezept* rezept);
 	RezepturProzessor(string* dosiererZutaten);	
+	RezepturProzessor(void);
+	void setDosiererZutaten(std::string* dosiererZutaten);
 };
 
 #endif
