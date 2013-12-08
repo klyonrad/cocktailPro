@@ -10,9 +10,9 @@ using namespace std;
 class CocktailPro
 {
 private:
-	int anzahlRezepte;
+	int anzahlRezepte; // Luka: ????????
     string dosiererZutaten[10];
-	string rezeptNames[20];			//maximal 20 rezepte möglich...
+	string rezeptNames[20];			//maximal 20 rezepte möglich... //TODO: rewrite with vector<> or list<>
 	CocktailPossibilities* myCocktailPossibilities;
     RezepturProzessor myRezepturProzessor;
 	Rezeptbuch* MyRezeptbuch;

@@ -1,4 +1,4 @@
-#ifndef REZEPTURPROZESSOR_H_H
+﻿#ifndef REZEPTURPROZESSOR_H_H
 #define REZEPTURPROZESSOR_H_H
 
 // #include "Rezept.h"

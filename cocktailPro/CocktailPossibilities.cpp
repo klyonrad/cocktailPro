@@ -38,7 +38,7 @@ Rezeptbuch* CocktailPossibilities::mischbareRezepteBerechnen(string* zutatenList
 		{
 			//cout<<r->getName()<<" \t\tnicht mischbar"<<endl;
 			MyRezeptbuch->deleteRezept(i);
-			i--;
+			i--; // because the for loop does i++ but we still wanna access the next recipe
 		}
 	}
 	return MyRezeptbuch;
