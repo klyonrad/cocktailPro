@@ -38,7 +38,20 @@ void RezepturProzessor::setDosiererZutaten(std::string* dosiererZutaten)
 //
 void RezepturProzessor::cocktailMischen(Rezept* rezept)
 {
+	for (unsigned int i = 0; i < rezept->getAnzahlRezeptschritte(); i++)
+	{
+		Rezeptschritt* currentRezeptSchritt = rezept->getRezeptSchritt(i);
+		std::string currentZutat;
+		int currentMenge;
+		currentZutat = currentRezeptSchritt->getZutat();
+		currentMenge = currentRezeptSchritt->getMenge(); //TODO: getMenge() returns float; needs fix
 
+		if (currentZutat == "Mischen")
+			myMischbehaelter->mischen(currentMenge);
+		if (currentZutat == "Stampfen")
+			myMischbehaelter->stampfen(currentMenge);
+
+	}
 }
 
 //
