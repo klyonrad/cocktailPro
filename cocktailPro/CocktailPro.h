@@ -4,15 +4,15 @@
 #include "RezepturProzessor.h"
 #include "CocktailPossibilities.h"
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class CocktailPro
 {
 private:
-	int anzahlRezepte; // Luka: ????????
     string dosiererZutaten[10];
-	string rezeptNames[20];			//maximal 20 rezepte möglich... //TODO: rewrite with vector<> or list<>
+	std::vector<std::string> rezeptNames;
 	CocktailPossibilities* myCocktailPossibilities;
     RezepturProzessor myRezepturProzessor;
 	Rezeptbuch* MyRezeptbuch;

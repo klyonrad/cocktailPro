@@ -6,29 +6,24 @@ using namespace std;
 
 CocktailPro::CocktailPro()
 {
-	anzahlRezepte=20;
 	cout<<"CocktailPro wird Erstellt..."<<endl;
 	this->zutatenEinlesen();
 
 	myRezepturProzessor.setDosiererZutaten(dosiererZutaten);
 	myCocktailPossibilities=new CocktailPossibilities();
 	MyRezeptbuch=myCocktailPossibilities->mischbareRezepteBerechnen(dosiererZutaten);
-
+		
 	// print  out the available recipes:
-	for (int i=0;i<anzahlRezepte;i++)
-	{
-		rezeptNames[i]=" ";
-	}
-	for(int i=0;i<MyRezeptbuch->getAnzahlRezepte()  &&  i<anzahlRezepte;i++)
+	for(int i=0;i<MyRezeptbuch->getAnzahlRezepte();i++)
 	{
 		Rezept* r = MyRezeptbuch->getRezept(i);
-		rezeptNames[i]= r->getName();
+		rezeptNames.push_back(r->getName());
 		cout<<rezeptNames[i]<<endl;
 	}
 }
 void CocktailPro::printMischbareRezepte()
 {
-	for(int i=0;i<anzahlRezepte;i++)
+	for(unsigned int i=0;i<rezeptNames.size();i++)
 	{
 		if(rezeptNames[i]!=" ")
 		{
