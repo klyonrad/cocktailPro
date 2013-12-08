@@ -27,10 +27,11 @@ RezepturProzessor::RezepturProzessor(string* dosiererZutaten)
 
 void RezepturProzessor::setDosiererZutaten(std::string* dosiererZutaten)
 {
-	for(int i=0;i<10;i++)
+	int i = 0;
+	for (std::vector<Dosierer>::iterator it = myDosierer->begin() ; it != myDosierer->end(); ++it)
 	{
-		// ZutatenName[i]=dosiererZutaten[i]; // hatten wir uns nicht darauf geeinigt, dass der RezepturProzessor sich nicht extra die Zutaten aufspeichert?
-		myDosierer[i]=new Dosierer(dosiererZutaten[i],myWaage);
+		myDosierer->emplace(it, dosiererZutaten[i], myWaage);
+		i++;
 	}
 }
 
@@ -38,18 +39,25 @@ void RezepturProzessor::setDosiererZutaten(std::string* dosiererZutaten)
 //
 void RezepturProzessor::cocktailMischen(Rezept* rezept)
 {
-	for (unsigned int i = 0; i < rezept->getAnzahlRezeptschritte(); i++)
+	for (int i = 0; i < rezept->getAnzahlRezeptschritte(); i++)
 	{
 		Rezeptschritt* currentRezeptSchritt = rezept->getRezeptSchritt(i);
 		std::string currentZutat;
 		int currentMenge;
 		currentZutat = currentRezeptSchritt->getZutat();
-		currentMenge = currentRezeptSchritt->getMenge(); //TODO: getMenge() returns float; needs fix
+		currentMenge = (int) currentRezeptSchritt->getMenge();
 
-		if (currentZutat == "Mischen")
+		if (currentZutat == "Mischen") {
 			myMischbehaelter->mischen(currentMenge);
-		if (currentZutat == "Stampfen")
+			continue;
+		}
+		else if (currentZutat == "Stampfen"){
 			myMischbehaelter->stampfen(currentMenge);
+			continue;
+		}
+		else {
+
+		}
 
 	}
 }

@@ -3,6 +3,7 @@
 
 // #include "Rezept.h"
 #include <string>
+#include <vector>
 #include "Dosierer.h"
 #include "Entleerer.h"
 #include "Mischbehaelter.h"
@@ -22,7 +23,7 @@ private:
 	Entleerer * myEntleerer;
 	Mischbehaelter * myMischbehaelter;
 	Waage * myWaage;
-	Dosierer* myDosierer[10];
+	vector<Dosierer> myDosierer[10];
 	cockProGUI* mycockProGUI;
 
 	void searchZutatID();
