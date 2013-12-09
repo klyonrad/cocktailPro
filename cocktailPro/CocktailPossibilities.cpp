@@ -1,15 +1,18 @@
 #include "CocktailPossibilities.h"
 #include <iostream>
 #include <iomanip>
+#include <iostream>
 
 using namespace std;
 
 CocktailPossibilities::CocktailPossibilities()
 {
 	MyRezeptbuch=new Rezeptbuch;
+	cout<<"CocktailPossibilities wurde erstellt"<<endl;
 }
 Rezeptbuch* CocktailPossibilities::mischbareRezepteBerechnen(string* zutatenListe)
-{ 
+{
+	cout<<"CocktailPossibilities berechnet moegliche Cocktails..."<<endl;
 	for (int i=0; i < MyRezeptbuch->getAnzahlRezepte(); i++) // für jedes Rezept...
 	{
 		bool mischbar=true;
@@ -41,6 +44,7 @@ Rezeptbuch* CocktailPossibilities::mischbareRezepteBerechnen(string* zutatenList
 			i--; // because the for loop does i++ but we still wanna access the next recipe
 		}
 	}
+	cout<<"CocktailPossibilities hat alle moeglichen Cocktails berechnet"<<endl;
 	return MyRezeptbuch;
 }
 

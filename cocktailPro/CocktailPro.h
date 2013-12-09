@@ -23,7 +23,7 @@ public:
 	void printKonfig();
 	void printMenu();
 	void printMischbareRezepte();
-	void rezeptAusfuehren();
+	bool rezeptAusfuehren();
 	void zutatenEinlesen();
 
 };

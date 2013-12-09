@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 
+
 using namespace std; 
 
 void testmain();
@@ -71,10 +72,12 @@ cout << "Jetzt gibt es ein Rezept weniger, naemlich: " <<
 }
 void hauptmain()
 {
-	cout << "----------CocktailPro----------"<< endl;
+	cout << "----------------CocktailPro-----------------"<< endl;
+	cout << "\n----Starte Konfiguration vom CocktailPro----\n\n"<< endl;
 	CocktailPro myCockPro;
+	cout << "\n\n-------------CocktailPro wurde--------------\n----------erfolgreich Konfiguriert----------\n"<<endl;
 	myCockPro.main();
-	
+	cout << "\n\n---------CocktailPro wurde Beendet----------\n";
 }
 
 

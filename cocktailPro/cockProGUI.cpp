@@ -6,13 +6,16 @@ using namespace std;
 cockProGUI::cockProGUI(Waage* myW)
 {
 	myWaage=myW;
-	cout<<"cockProGUI wurde Erstellt"<<endl;
+	cout<<"cockProGUI wurde erstellt"<<endl;
 	myWaage->meldeAn(this);
-	cout<<"cockProGUI hat sich mit Waage Verbunden"<<endl;
+	cout<<"cockProGUI hat sich mit Waage verbunden"<<endl;
 }
 
 void cockProGUI::aktualisiere()
 {
+	int a=myWaage->getAbsolutgewicht();
+	int d=myWaage->getDifferenzgewicht();
+	cout<<d<<"\t"<<a<<endl;
 }
 //void cockProGUI::printAusgewaehltesRezept(std::string rezeptName)
 //{
@@ -65,25 +68,3 @@ void cockProGUI::aktualisiere()
 //{
 //	
 //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,11 +1,11 @@
-﻿#include "RezepturProzessor.h"
+#include "RezepturProzessor.h"
 #include <iostream>
 
 using namespace std;
 RezepturProzessor::RezepturProzessor(void)
 {	
 	cout<<"RezepturProzessor wird erstellt....."<<endl;
-	aktuelleZutatID=0;
+	aktuelleZutatID=-1;
 	myMischbehaelter=new Mischbehaelter();
 	myWaage=new Waage();
 	myEntleerer=new Entleerer(myWaage);
@@ -27,11 +27,10 @@ RezepturProzessor::RezepturProzessor(string* dosiererZutaten)
 
 void RezepturProzessor::setDosiererZutaten(std::string* dosiererZutaten)
 {
-	int i = 0;
-	for (std::vector<Dosierer>::iterator it = myDosierer->begin() ; it != myDosierer->end(); ++it)
+	for(int i=0;i<10;i++)
 	{
-		myDosierer->emplace(it, dosiererZutaten[i], myWaage);
-		i++;
+		ZutatenName[i]=dosiererZutaten[i]; // hatten wir uns nicht darauf geeinigt, dass der RezepturProzessor sich nicht extra die Zutaten aufspeichert?
+		myDosierer[i]=new Dosierer(dosiererZutaten[i],myWaage);
 	}
 }
 
@@ -39,27 +38,32 @@ void RezepturProzessor::setDosiererZutaten(std::string* dosiererZutaten)
 //
 void RezepturProzessor::cocktailMischen(Rezept* rezept)
 {
-	for (int i = 0; i < rezept->getAnzahlRezeptschritte(); i++)
+	for (unsigned int i = 0; i < rezept->getAnzahlRezeptschritte(); i++)
 	{
 		Rezeptschritt* currentRezeptSchritt = rezept->getRezeptSchritt(i);
 		std::string currentZutat;
 		int currentMenge;
 		currentZutat = currentRezeptSchritt->getZutat();
-		currentMenge = (int) currentRezeptSchritt->getMenge();
-
-		if (currentZutat == "Mischen") {
+		currentMenge = currentRezeptSchritt->getMenge(); //TODO: getMenge() returns float; needs fix
+		aktuelleZutatID=-1;
+		for(int j=0;j<10;j++)
+		{
+			if(currentZutat==ZutatenName[j])
+			{
+				aktuelleZutatID=j;
+			}
+		}
+		if(aktuelleZutatID!=-1)
+		{
+			myDosierer[aktuelleZutatID]->abfuellen(currentMenge);
+		}
+		if (currentZutat == "Mischen")
 			myMischbehaelter->mischen(currentMenge);
-			continue;
-		}
-		else if (currentZutat == "Stampfen"){
+		if (currentZutat == "Stampfen")
 			myMischbehaelter->stampfen(currentMenge);
-			continue;
-		}
-		else {
-
-		}
 
 	}
+	myEntleerer->entleeren();
 }
 
 //

@@ -8,32 +8,18 @@ using namespace std;
 
 class Entleerer: Beobachter
 {
-	
-public:
-	//
-	void aktualisiere();
-	//
-	void entleeren();
-	//
-	Entleerer(Waage* myWaage);
-	
 private:
-	//
 	Waage * myWaage;
-	
-	//
 	int restmenge;
-	
-	//
 	bool ventilOffen;
-	
-	//
 	void reinigen();
-	//
 	void ventilOeffnen();
-	//
     void ventilSchliessen();
 	
+public:
+	void aktualisiere();
+	void entleeren();
+	Entleerer(Waage* myWaage);
 };
 
 #endif

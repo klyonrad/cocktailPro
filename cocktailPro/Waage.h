@@ -9,14 +9,15 @@ class Waage: Subjekt
 {
 private:
 	int absolutgewicht;
-	//int DeltaNullpunkt; //int getDifferenzgewicht();
+	//int DeltaNullpunkt; //
 	int differenzgewicht;	//Deltagewicht
-
+	
 public:
 	Waage();
 	int getAbsolutgewicht();
+	int getDifferenzgewicht();
 	void nullpunktSetzen();	
-	void wiegen();	
+	void wiegen(int menge,bool stueck);	
 
 	void benachrichtige();
 	void meldeAb(Beobachter* parameter1);

@@ -1,9 +1,8 @@
-﻿#ifndef REZEPTURPROZESSOR_H_H
+#ifndef REZEPTURPROZESSOR_H_H
 #define REZEPTURPROZESSOR_H_H
 
 // #include "Rezept.h"
 #include <string>
-#include <vector>
 #include "Dosierer.h"
 #include "Entleerer.h"
 #include "Mischbehaelter.h"
@@ -23,7 +22,7 @@ private:
 	Entleerer * myEntleerer;
 	Mischbehaelter * myMischbehaelter;
 	Waage * myWaage;
-	vector<Dosierer> myDosierer[10];
+	Dosierer* myDosierer[10];
 	cockProGUI* mycockProGUI;
 
 	void searchZutatID();
