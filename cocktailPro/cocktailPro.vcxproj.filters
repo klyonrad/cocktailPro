@@ -48,12 +48,6 @@
     <ClCompile Include="Waage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MischbehaelterTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DosiererTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Beobachter.h">
@@ -87,12 +81,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Waage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MischbehaelterTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DosiererTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

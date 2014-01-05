@@ -62,7 +62,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\Users\Luka\Source\cppunit\lib\cppunitd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -89,11 +89,9 @@
     <ClCompile Include="CocktailPossibilities.cpp" />
     <ClCompile Include="cocktailPro.cpp" />
     <ClCompile Include="Dosierer.cpp" />
-    <ClCompile Include="DosiererTest.cpp" />
     <ClCompile Include="Entleerer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mischbehaelter.cpp" />
-    <ClCompile Include="MischbehaelterTest.cpp" />
     <ClCompile Include="RezepturProzessor.cpp" />
     <ClCompile Include="Subjekt.cpp" />
     <ClCompile Include="Waage.cpp" />
@@ -104,10 +102,8 @@
     <ClInclude Include="CocktailPossibilities.h" />
     <ClInclude Include="CocktailPro.h" />
     <ClInclude Include="Dosierer.h" />
-    <ClInclude Include="DosiererTest.h" />
     <ClInclude Include="Entleerer.h" />
     <ClInclude Include="Mischbehaelter.h" />
-    <ClInclude Include="MischbehaelterTest.h" />
     <ClInclude Include="Rezeptbuch.h" />
     <ClInclude Include="RezepturProzessor.h" />
     <ClInclude Include="Subjekt.h" />
