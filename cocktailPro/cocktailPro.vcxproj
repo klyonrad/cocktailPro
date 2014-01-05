@@ -88,7 +88,9 @@
     <ClCompile Include="CockProGUI.cpp" />
     <ClCompile Include="CocktailPossibilities.cpp" />
     <ClCompile Include="cocktailPro.cpp" />
+    <ClCompile Include="cocktailProTest.cpp" />
     <ClCompile Include="Dosierer.cpp" />
+    <ClCompile Include="DosiererTest.cpp" />
     <ClCompile Include="Entleerer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mischbehaelter.cpp" />
@@ -102,6 +104,7 @@
     <ClInclude Include="CocktailPossibilities.h" />
     <ClInclude Include="CocktailPro.h" />
     <ClInclude Include="Dosierer.h" />
+    <ClInclude Include="DosiererTest.h" />
     <ClInclude Include="Entleerer.h" />
     <ClInclude Include="Mischbehaelter.h" />
     <ClInclude Include="Rezeptbuch.h" />
