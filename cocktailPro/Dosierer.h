@@ -20,6 +20,7 @@ public:
 	
 private:
 	int abgefuelltesGewicht;
+	int currentRezeptSchrittMenge; // damit aktualisiere() darauf zugriff hat
 	Waage * myWaage;
 	bool stueckDosierer;
 	bool ventilOffen;

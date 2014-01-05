@@ -8,18 +8,7 @@ void Dosierer::setZutat(string zutat)
 	
 }
 
-//
-void Dosierer::abfuellen(int zutatmenge)
-{
-	myWaage->meldeAn(this);
-	myWaage->nullpunktSetzen();
-	ventilOeffnen();
-	cout<<"Delta:\tAbsolut:"<<endl;
-	myWaage->wiegen(zutatmenge,stueckDosierer);
-        cout<<endl;
-	ventilSchliessen();
-	myWaage->meldeAb(this);
-}
+
 
 //
 Dosierer::Dosierer(string z, Waage* myW)
@@ -46,6 +35,28 @@ string Dosierer::getZutat()
 }
 
 //
+void Dosierer::abfuellen(int zutatmenge)
+{
+	myWaage->meldeAn(this);
+	myWaage->nullpunktSetzen();
+	currentRezeptSchrittMenge = zutatmenge;
+	ventilOeffnen();
+	cout<<"Delta:\tAbsolut:"<<endl;
+	myWaage->wiegen(zutatmenge,stueckDosierer);
+        cout<<endl;
+	ventilSchliessen();
+	myWaage->meldeAb(this);
+}
+
+//
+void Dosierer::aktualisiere()
+{
+	cout << "getDifferenzgewicht: " << myWaage->getDifferenzgewicht() << endl;
+	if (myWaage->getDifferenzgewicht() >= currentRezeptSchrittMenge)
+		ventilSchliessen();
+}
+
+//
 void Dosierer::ventilSchliessen()
 {
 	ventilOffen=false;
@@ -59,10 +70,7 @@ void Dosierer::ventilSchliessen()
 	}
 }
 
-//
-void Dosierer::aktualisiere()
-{
-}
+
 
 //
 void Dosierer::ventilOeffnen()
