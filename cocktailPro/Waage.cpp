@@ -69,7 +69,8 @@ void Waage::wiegen(int menge,bool stueck)//falls menge=0 => Entleerer, stueck in
 			benachrichtige();
 		}
 	}
-
+	
+	cout << "wiegen method ended." << endl;
 }
 
 void Waage::meldeAn(Beobachter* parameter1)
