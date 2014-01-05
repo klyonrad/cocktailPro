@@ -1,6 +1,8 @@
 #include "Entleerer.h"
 #include <iostream>
-#include <Windows.h>
+
+#include <stdlib.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -18,6 +20,7 @@ void Entleerer::entleeren()
 	ventilOeffnen();
 	cout<<"Delta:\tAbsolut:"<<endl;
 	myWaage->wiegen(0,true);
+        cout<<endl;
 	ventilSchliessen();
 	myWaage->meldeAb(this);
 
@@ -43,7 +46,7 @@ Entleerer::Entleerer(Waage* myW)
 void Entleerer::reinigen()
 {
 	cout<<"reinigung..."<<endl;
-	Sleep(1000);
+	sleep(1);
 }
 
 //

@@ -16,6 +16,7 @@ void Dosierer::abfuellen(int zutatmenge)
 	ventilOeffnen();
 	cout<<"Delta:\tAbsolut:"<<endl;
 	myWaage->wiegen(zutatmenge,stueckDosierer);
+        cout<<endl;
 	ventilSchliessen();
 	myWaage->meldeAb(this);
 }

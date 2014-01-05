@@ -1,4 +1,4 @@
-#include "cockProGUI.h"
+#include "CockProGUI.h"
 #include <iostream>
 
 using namespace std;
@@ -15,7 +15,7 @@ void cockProGUI::aktualisiere()
 {
 	int a=myWaage->getAbsolutgewicht();
 	int d=myWaage->getDifferenzgewicht();
-	cout<<d<<"\t"<<a<<endl;
+	cout<<d<<"\t"<<a<<"\r"<<flush;//cout<<d<<"\t"<<a<<endl;
 }
 //void cockProGUI::printAusgewaehltesRezept(std::string rezeptName)
 //{

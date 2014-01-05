@@ -1,7 +1,8 @@
 #include "Subjekt.h"
 #include "Waage.h"
 #include <iostream>
-#include <Windows.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -27,7 +28,7 @@ void Waage::wiegen(int menge,bool stueck)//falls menge=0 => Entleerer, stueck in
 		benachrichtige();
 		for(absolutgewicht;absolutgewicht>0;)
 		{
-			Sleep(1000);
+			sleep(1);
 			if(absolutgewicht>=20)
 			{
 				absolutgewicht=absolutgewicht-20;
@@ -46,7 +47,7 @@ void Waage::wiegen(int menge,bool stueck)//falls menge=0 => Entleerer, stueck in
 		benachrichtige();
 		for(differenzgewicht;differenzgewicht<menge;)
 		{
-			Sleep(1000);
+			sleep(0.1);
 			differenzgewicht=differenzgewicht+10;
 			absolutgewicht=absolutgewicht+10;
 			benachrichtige();
@@ -57,7 +58,7 @@ void Waage::wiegen(int menge,bool stueck)//falls menge=0 => Entleerer, stueck in
 		benachrichtige();
 		for(differenzgewicht;differenzgewicht<menge;)
 		{
-			Sleep(1000);
+			sleep(0.1);
 			differenzgewicht=differenzgewicht+4;
 			absolutgewicht=absolutgewicht+4;
 			benachrichtige();

@@ -11,8 +11,8 @@ void testmain();
 void hauptmain();
 int main()
 {
-	hauptmain();
-//	testmain();
+        hauptmain();
+	//testmain();
 	return 0;
 }
 
@@ -38,14 +38,14 @@ cout << "*********************************************" << endl;
 
 // Rezeptschritte abfragen
  
-for (i=0; i<MyRezeptbuch->getAnzahlRezepte(); i++) // für jedes Rezept...
+for (i=0; i<MyRezeptbuch->getAnzahlRezepte(); i++) // fï¿½r jedes Rezept...
 {
     cout << endl << endl;
-    // Cocktailname als Überschrift
+    // Cocktailname als ï¿½berschrift
     Rezept* r = MyRezeptbuch->getRezept(i);
     cout << "**** " << r->getName() << " ****" << endl;
 
-    for (int j=0; j<r->getAnzahlRezeptschritte(); j++) // für jeden Rezeptschritt...
+    for (int j=0; j<r->getAnzahlRezeptschritte(); j++) // fï¿½r jeden Rezeptschritt...
     {
         Rezeptschritt* rs = r->getRezeptSchritt(j);
         float Menge = rs->getMenge();
@@ -55,14 +55,40 @@ for (i=0; i<MyRezeptbuch->getAnzahlRezepte(); i++) // für jedes Rezept...
     }
 }
 
+
+
 // Rezept loeschen
+Rezept* memoryleak = MyRezeptbuch->getRezept(2);// von uns, memory leak
+
 cout << "*********************************************" << endl;
 cout << "Teste das Loeschen von Rezepten!" << endl;
 cout << "Es gibt " << MyRezeptbuch->getAnzahlRezepte() << " Cocktails" << endl;
     MyRezeptbuch->deleteRezept(2);
 cout << "Jetzt gibt es ein Rezept weniger, naemlich: " << 
         MyRezeptbuch->getAnzahlRezepte() << " Cocktails" << endl;    
-    
+
+cout << memoryleak->getName() << endl;
+
+cout << MyRezeptbuch->getRezept(100) << endl; // out of range test
+
+cout << MyRezeptbuch->getRezept(3)->getRezeptSchritt(20) << endl; // out of range test
+
+
+int maxrezeptschritte = MyRezeptbuch->getRezept(1)->getAnzahlRezeptschritte();
+cout << MyRezeptbuch->getRezept(1)->getRezeptSchritt(maxrezeptschritte-1)->getZutat() << endl;
+
+
+for (int i = 0; i < 6; i++) {
+    MyRezeptbuch->deleteRezept(0);
+    cout << "Rezept " << i << " geloescht" << endl;
+}
+cout << "Rezeptbuch sollte jetzt leer sein. " << endl;
+cout << MyRezeptbuch->getRezept(2) << endl;
+if (MyRezeptbuch->deleteRezept(2) )
+    cout << "deleteRezept hat True geliefert. FEHLER" << endl;
+else
+    cout << "deleteRezept hat false geliefert. So soll es sein." << endl;
+cout << MyRezeptbuch->getAnzahlRezepte() << endl;
 
  //char c;
  //cin >> c;

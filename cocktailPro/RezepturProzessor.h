@@ -8,7 +8,7 @@
 #include "Mischbehaelter.h"
 #include "Waage.h"
 #include "Rezeptbuch.h"
-#include "cockProGUI.h"
+#include "CockProGUI.h"
 
 using namespace std;
 

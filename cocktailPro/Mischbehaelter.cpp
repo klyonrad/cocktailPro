@@ -1,6 +1,8 @@
 #include "Mischbehaelter.h"
 #include <iostream>
-#include <Windows.h>
+
+#include <stdlib.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -14,8 +16,8 @@ void Mischbehaelter::mischen(int mixtime)
 	cout<<"\nmischen: ";
 	for(int i=0;i<mixtime;i++)
 	{
-		cout<<"#";
-		Sleep(1000);
+		cout<<"#"<<flush;
+		sleep(1);
 	}
 	cout<<endl;
 }
@@ -26,8 +28,8 @@ void Mischbehaelter::stampfen(int stompTime)
 	cout<<"\nstampfen: ";
 	for(int i=0;i<stompTime;i++)
 	{
-		cout<<"#";
-		Sleep(1000);
+		cout<<"#" << flush;
+		sleep(1);
 	}
 	cout<<endl;
 }

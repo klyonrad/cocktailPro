@@ -13,6 +13,7 @@ CocktailPro::CocktailPro()
 	myRezepturProzessor.setDosiererZutaten(dosiererZutaten);
 	myCocktailPossibilities=new CocktailPossibilities();
 	MyRezeptbuch=myCocktailPossibilities->mischbareRezepteBerechnen(dosiererZutaten);
+        //cout<<myCocktailPossibilities->getAnzahlRezepte()
 		
 	// print  out the available recipes:
 	for(int i=0;i<MyRezeptbuch->getAnzahlRezepte();i++)
