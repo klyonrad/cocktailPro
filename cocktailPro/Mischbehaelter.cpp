@@ -2,7 +2,12 @@
 #include <iostream>
 
 #include <stdlib.h>
+#ifdef _WIN32
+#include <Windows.h>
+#define sleep(x) Sleep(x*1000)
+#else
 #include <unistd.h>
+#endif
 
 using namespace std;
 
